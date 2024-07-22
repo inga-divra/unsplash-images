@@ -5,8 +5,13 @@ const AppContext = createContext()
 // Dark Mode - JS: Check which theme the user prefers in their browser
 const getInitialDarkMode = () => {
     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    console.log(prefersDarkMode);
-    return prefersDarkMode;
+    const storedDarkMode = localStorage.getItem('darkTheme');
+
+    if (storedDarkMode === null) {
+        return prefersDarkMode;
+    }
+
+    return storedDarkMode === 'true';
 };
 
 export const AppProvider = ({ children }) => {
@@ -16,6 +21,7 @@ export const AppProvider = ({ children }) => {
     const toggleDarkTheme = () => {
         const newDarkTheme = !isDarkTheme
         setIsDarkTheme(newDarkTheme)
+        localStorage.setItem('darkTheme', newDarkTheme)
     }
 
     // Sets dark/light theme according to user's preference when the app loads
