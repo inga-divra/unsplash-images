@@ -1,3 +1,9 @@
+## Unsplash Images App
+A web application to search and display images from Unsplash with a dark theme toggle.
+This project is a part of John Smilga's React course I took. For more information, visit https://johnsmilga.com/
+
+## Live Demo https://unsplash-images-ingady.netlify.app/
+
 ## Figma URL
 
 [Unsplash Images](https://www.figma.com/file/O2MaAAlr4nznh7m53azatL/Unsplash-images?node-id=0%3A1&t=cYDOCgqOs9IX2If0-1)
