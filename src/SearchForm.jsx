@@ -1,12 +1,13 @@
 import { useGlobalContext } from './context'
 
 const SearchForm = () => {
+    const { setSearchTerm } = useGlobalContext()
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const searchValue = e.target.search.value
         if (!searchValue) return
-        console.log(searchValue);
+        setSearchTerm(searchValue)
     }
 
     return <section>
@@ -18,7 +19,7 @@ const SearchForm = () => {
                 className='form-input'
                 type='text'
                 name='search'
-                placeholder='cat' />
+                placeholder='racoon' />
             <button
                 className='btn'
                 type='submit'>
